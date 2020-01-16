@@ -1,11 +1,13 @@
 package GUI;
 
 import DAO.Conexao;
+import java.awt.Toolkit;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.ImageIcon;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 public class TelaLogin extends javax.swing.JFrame {
@@ -17,6 +19,7 @@ public class TelaLogin extends javax.swing.JFrame {
     public TelaLogin() {
        initComponents();
        conectarBanco();
+       setIcon();
     }
     
     private void conectarBanco(){
@@ -42,7 +45,8 @@ public class TelaLogin extends javax.swing.JFrame {
             rs = pst.executeQuery();
             
             if (rs.next()){
-                JOptionPane.showMessageDialog(null, "Autenticado!");
+                fecharComponentes();
+                chamarTela(new TelaPrincipal());
             }else {
                 JOptionPane.showMessageDialog(null, "Usuário ou Senha Inválido!");
             }
@@ -152,5 +156,24 @@ public class TelaLogin extends javax.swing.JFrame {
     private javax.swing.JLabel txtSenha;
     private javax.swing.JLabel txtStatus;
     // End of variables declaration//GEN-END:variables
-
+    
+    private void chamarTela(JFrame tela){
+        if (tela == null) {
+            System.out.println("Instancie a Tela.");
+        }
+        tela.setVisible(true);
+    }
+    
+    private void fecharComponentes(){
+        try {
+            this.dispose();
+            conn.close();
+        } catch (SQLException ex) {
+            System.out.println("Error: " + ex.getMessage());
+        }
+    }
+    
+    private void setIcon() {
+        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/Icones/IconeLogo.png")));
+    }
 }
