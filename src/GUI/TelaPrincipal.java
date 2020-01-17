@@ -29,6 +29,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         Menu = new javax.swing.JMenuBar();
         OPCadastros = new javax.swing.JMenu();
         clienteMenu = new javax.swing.JMenuItem();
+        usuariosMenu = new javax.swing.JMenuItem();
         OPRelatorio = new javax.swing.JMenu();
         servicoMenu = new javax.swing.JMenuItem();
         OPAjuda = new javax.swing.JMenu();
@@ -69,6 +70,10 @@ public class TelaPrincipal extends javax.swing.JFrame {
         clienteMenu.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         OPCadastros.add(clienteMenu);
 
+        usuariosMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/user_suit.png"))); // NOI18N
+        usuariosMenu.setText("Usuários");
+        OPCadastros.add(usuariosMenu);
+
         Menu.add(OPCadastros);
 
         OPRelatorio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/RelatórioIcone.png"))); // NOI18N
@@ -91,6 +96,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
         sobreMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/SobreIcone.png"))); // NOI18N
         sobreMenu.setText("Sobre");
         sobreMenu.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        sobreMenu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                sobreMenuActionPerformed(evt);
+            }
+        });
         OPAjuda.add(sobreMenu);
 
         Menu.add(OPAjuda);
@@ -119,6 +129,10 @@ public class TelaPrincipal extends javax.swing.JFrame {
        }
     }//GEN-LAST:event_formWindowClosing
 
+    private void sobreMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sobreMenuActionPerformed
+        chamarTela(new TelaSobre());
+    }//GEN-LAST:event_sobreMenuActionPerformed
+
     public static void main(String args[]) {
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
@@ -141,11 +155,12 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuBar Menu;
     private javax.swing.JMenu OPAjuda;
     private javax.swing.JMenu OPCadastros;
-    private javax.swing.JMenu OPRelatorio;
+    public javax.swing.JMenu OPRelatorio;
     private javax.swing.JMenuItem clienteMenu;
     private javax.swing.JDesktopPane painelDesktop;
     private javax.swing.JMenuItem servicoMenu;
     private javax.swing.JMenuItem sobreMenu;
+    public javax.swing.JMenuItem usuariosMenu;
     // End of variables declaration//GEN-END:variables
   private void setIcon() {
         setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/Icones/IconeLogo.png")));

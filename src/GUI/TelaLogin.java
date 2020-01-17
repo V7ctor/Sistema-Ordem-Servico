@@ -45,8 +45,15 @@ public class TelaLogin extends javax.swing.JFrame {
             rs = pst.executeQuery();
             
             if (rs.next()){
+                TelaPrincipal tela = new TelaPrincipal();
+                String perfil = rs.getString(6);
+                if (perfil.equals("Usuário")) {
+                    tela.OPRelatorio.setEnabled(false);
+                    tela.usuariosMenu.setEnabled(false);
+                }
+                tela.setVisible(true);
                 fecharComponentes();
-                chamarTela(new TelaPrincipal());
+               
             }else {
                 JOptionPane.showMessageDialog(null, "Usuário ou Senha Inválido!");
             }
@@ -156,13 +163,6 @@ public class TelaLogin extends javax.swing.JFrame {
     private javax.swing.JLabel txtSenha;
     private javax.swing.JLabel txtStatus;
     // End of variables declaration//GEN-END:variables
-    
-    private void chamarTela(JFrame tela){
-        if (tela == null) {
-            System.out.println("Instancie a Tela.");
-        }
-        tela.setVisible(true);
-    }
     
     private void fecharComponentes(){
         try {
