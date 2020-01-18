@@ -70,8 +70,14 @@ public class TelaPrincipal extends javax.swing.JFrame {
         clienteMenu.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         OPCadastros.add(clienteMenu);
 
+        usuariosMenu.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_U, java.awt.event.InputEvent.CTRL_MASK));
         usuariosMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/user_suit.png"))); // NOI18N
         usuariosMenu.setText("Usuários");
+        usuariosMenu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                usuariosMenuActionPerformed(evt);
+            }
+        });
         OPCadastros.add(usuariosMenu);
 
         Menu.add(OPCadastros);
@@ -132,6 +138,10 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private void sobreMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sobreMenuActionPerformed
         chamarTela(new TelaSobre());
     }//GEN-LAST:event_sobreMenuActionPerformed
+
+    private void usuariosMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usuariosMenuActionPerformed
+        chamarTela(new TelaUsuario());
+    }//GEN-LAST:event_usuariosMenuActionPerformed
 
     public static void main(String args[]) {
         try {
