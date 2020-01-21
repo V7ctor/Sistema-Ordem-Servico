@@ -1,13 +1,12 @@
 package GUI;
 
 import DAO.Conexao;
+import java.awt.Dimension;
 import java.awt.HeadlessException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 public class TelaUsuario extends javax.swing.JInternalFrame {
@@ -239,6 +238,7 @@ public class TelaUsuario extends javax.swing.JInternalFrame {
         btCancelar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btCancelar.setForeground(new java.awt.Color(255, 255, 255));
         btCancelar.setText("Cancelar Ação");
+        btCancelar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btCancelar.setEnabled(false);
         btCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -405,5 +405,4 @@ public class TelaUsuario extends javax.swing.JInternalFrame {
         campoSenha.setText("");
         campoTelefone.setText("");
     }
-
 }

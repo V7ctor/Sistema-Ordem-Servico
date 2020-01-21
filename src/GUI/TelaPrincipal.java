@@ -68,11 +68,17 @@ public class TelaPrincipal extends javax.swing.JFrame {
         clienteMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/IconeCliente.png"))); // NOI18N
         clienteMenu.setText("Cliente");
         clienteMenu.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        clienteMenu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                clienteMenuActionPerformed(evt);
+            }
+        });
         OPCadastros.add(clienteMenu);
 
         usuariosMenu.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_U, java.awt.event.InputEvent.CTRL_MASK));
         usuariosMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/user_suit.png"))); // NOI18N
         usuariosMenu.setText("Usuários");
+        usuariosMenu.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         usuariosMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 usuariosMenuActionPerformed(evt);
@@ -142,6 +148,10 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private void usuariosMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usuariosMenuActionPerformed
         chamarTela(new TelaUsuario());
     }//GEN-LAST:event_usuariosMenuActionPerformed
+
+    private void clienteMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clienteMenuActionPerformed
+        chamarTela(new TelaCliente());
+    }//GEN-LAST:event_clienteMenuActionPerformed
 
     public static void main(String args[]) {
         try {
