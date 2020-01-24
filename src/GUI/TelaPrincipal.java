@@ -30,6 +30,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
         OPCadastros = new javax.swing.JMenu();
         clienteMenu = new javax.swing.JMenuItem();
         usuariosMenu = new javax.swing.JMenuItem();
+        tecnicoMenu = new javax.swing.JMenuItem();
+        jMenuItem1 = new javax.swing.JMenuItem();
         OPRelatorio = new javax.swing.JMenu();
         servicoMenu = new javax.swing.JMenuItem();
         OPAjuda = new javax.swing.JMenu();
@@ -85,6 +87,28 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         });
         OPCadastros.add(usuariosMenu);
+
+        tecnicoMenu.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_T, java.awt.event.InputEvent.CTRL_MASK));
+        tecnicoMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/tecnicoIcone.png"))); // NOI18N
+        tecnicoMenu.setText("Técnico");
+        tecnicoMenu.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        tecnicoMenu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tecnicoMenuActionPerformed(evt);
+            }
+        });
+        OPCadastros.add(tecnicoMenu);
+
+        jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_O, java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/page_add.png"))); // NOI18N
+        jMenuItem1.setText("OS");
+        jMenuItem1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        OPCadastros.add(jMenuItem1);
 
         Menu.add(OPCadastros);
 
@@ -153,6 +177,14 @@ public class TelaPrincipal extends javax.swing.JFrame {
         chamarTela(new TelaCliente());
     }//GEN-LAST:event_clienteMenuActionPerformed
 
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        chamarTela(new TelaOs());
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void tecnicoMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tecnicoMenuActionPerformed
+        chamarTela(new TelaTecnico());
+    }//GEN-LAST:event_tecnicoMenuActionPerformed
+
     public static void main(String args[]) {
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
@@ -177,9 +209,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenu OPCadastros;
     public javax.swing.JMenu OPRelatorio;
     private javax.swing.JMenuItem clienteMenu;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JDesktopPane painelDesktop;
     private javax.swing.JMenuItem servicoMenu;
     private javax.swing.JMenuItem sobreMenu;
+    private javax.swing.JMenuItem tecnicoMenu;
     public javax.swing.JMenuItem usuariosMenu;
     // End of variables declaration//GEN-END:variables
   private void setIcon() {
