@@ -34,6 +34,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jMenuItem1 = new javax.swing.JMenuItem();
         OPRelatorio = new javax.swing.JMenu();
         servicoMenu = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
         OPAjuda = new javax.swing.JMenu();
         sobreMenu = new javax.swing.JMenuItem();
 
@@ -122,6 +123,17 @@ public class TelaPrincipal extends javax.swing.JFrame {
         servicoMenu.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         OPRelatorio.add(servicoMenu);
 
+        jMenuItem2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_H, java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItem2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/report.png"))); // NOI18N
+        jMenuItem2.setText("Histórico de OS");
+        jMenuItem2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
+        OPRelatorio.add(jMenuItem2);
+
         Menu.add(OPRelatorio);
 
         OPAjuda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/AjudaIcone.png"))); // NOI18N
@@ -185,6 +197,10 @@ public class TelaPrincipal extends javax.swing.JFrame {
         chamarTela(new TelaTecnico());
     }//GEN-LAST:event_tecnicoMenuActionPerformed
 
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        chamarTela(new TelaExibicaoOs());
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
+
     public static void main(String args[]) {
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
@@ -210,6 +226,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     public javax.swing.JMenu OPRelatorio;
     private javax.swing.JMenuItem clienteMenu;
     private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JDesktopPane painelDesktop;
     private javax.swing.JMenuItem servicoMenu;
     private javax.swing.JMenuItem sobreMenu;
