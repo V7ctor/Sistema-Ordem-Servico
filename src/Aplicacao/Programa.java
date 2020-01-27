@@ -1,5 +1,6 @@
 package Aplicacao;
 
+import GUI.TelaLogin;
 import GUI.TelaPrincipal;
 
 public class Programa {
@@ -13,12 +14,12 @@ public class Programa {
                 }
             }
         } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(TelaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
      
        
         java.awt.EventQueue.invokeLater(() -> {
-            new TelaPrincipal().setVisible(true);
+            new TelaLogin().setVisible(true);
         });
     }
     

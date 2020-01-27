@@ -1,18 +1,26 @@
 package GUI;
 
+import DAO.Conexao;
+import MyReports.GerarRelatorio;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.Toolkit;
+import java.sql.Connection;
 import javax.swing.ImageIcon;
 import javax.swing.JInternalFrame;
 import javax.swing.JOptionPane;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.view.JasperViewer;
 
 
 public class TelaPrincipal extends javax.swing.JFrame {
     
+    Connection conn = null;
     public TelaPrincipal() {
         initComponents();
         setIcon();
+        conn = Conexao.getConector();
     }
 
     @SuppressWarnings("unchecked")
@@ -121,6 +129,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
         servicoMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/IconeOperacao.png"))); // NOI18N
         servicoMenu.setText("Serviço");
         servicoMenu.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        servicoMenu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                servicoMenuActionPerformed(evt);
+            }
+        });
         OPRelatorio.add(servicoMenu);
 
         jMenuItem2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_H, java.awt.event.InputEvent.CTRL_MASK));
@@ -200,6 +213,12 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
         chamarTela(new TelaExibicaoOs());
     }//GEN-LAST:event_jMenuItem2ActionPerformed
+
+    private void servicoMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_servicoMenuActionPerformed
+      GerarRelatorio gr = new GerarRelatorio();
+      gr.ficha("D:\\CursoJava\\Sistema de Ordem de Serviço\\Programa\\relatorio\\MyReports\\listagemOs.jasper");
+      
+    }//GEN-LAST:event_servicoMenuActionPerformed
 
     public static void main(String args[]) {
         try {

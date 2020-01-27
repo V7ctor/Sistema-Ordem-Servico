@@ -1,0 +1,2 @@
+INDEX VERSION 1.131+D:\CursoJava\Sistema de Ordem de Serviço\Programa\relatorio\.metadata\.plugins\org.eclipse.jdt.core
+2142118396.index

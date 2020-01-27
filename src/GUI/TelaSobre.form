@@ -61,8 +61,9 @@
                       <Component id="jLabel2" max="32767" attributes="0"/>
                       <Component id="jLabel1" max="32767" attributes="0"/>
                       <Component id="jLabel3" max="32767" attributes="0"/>
+                      <Component id="jLabel4" alignment="0" max="32767" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="213" max="32767" attributes="0"/>
+                  <EmptySpace pref="145" max="32767" attributes="0"/>
                   <Component id="jLabel5" min="-2" pref="212" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="78" max="-2" attributes="0"/>
               </Group>
@@ -84,10 +85,12 @@
                           <Component id="jLabel2" min="-2" pref="31" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jLabel3" min="-2" pref="30" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="jLabel4" min="-2" pref="30" max="-2" attributes="0"/>
                       </Group>
                       <Component id="jLabel5" min="-2" pref="140" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="203" max="32767" attributes="0"/>
+                  <EmptySpace pref="207" max="32767" attributes="0"/>
                   <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -122,6 +125,11 @@
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/Icones/LogoGNU.png"/>
             </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel4">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="- Integra&#xe7;&#xe3;o ao JasperSoft para Emiss&#xe3;o de Relat&#xf3;rios"/>
           </Properties>
         </Component>
       </SubComponents>
